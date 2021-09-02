@@ -31,7 +31,6 @@ defmodule Gissues.GithubClient.Api do
     |> case do
       {:ok, data, _} ->
         data
-        |> IO.inspect()
 
       _ ->
         :error

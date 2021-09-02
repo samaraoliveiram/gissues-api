@@ -7,7 +7,6 @@ defmodule Gissues.FetchDataTest do
 
   @repo "rumbl"
   @owner "samaraoliveiram"
-  @resource ""
 
   Mox.defmock(GithubClient.ApiMock, for: Gissues.GithubClient.ApiBehaviour)
 
@@ -20,9 +19,7 @@ defmodule Gissues.FetchDataTest do
       end)
       |> expect(:get_user_name, 1, fn @owner -> user() end)
 
-      result =
-        FetchData.get_repo_data(@owner, @repo)
-        |> IO.inspect()
+      result = FetchData.get_repo_data(@owner, @repo)
 
       assert =
         %{
